@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHOTOBOOTH - Thanh Long ❤️‍🩹</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 10px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #ffccc7;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+
+        #gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .image-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        img, video {
+            max-width: 90%;
+            max-height: 80vh;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+            background-color: #1a1a1a;
+        }
+
+        img:hover, video:hover {
+            transform: scale(1.02);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bộ Sưu Tập Của Thanh Long ❤️‍🩹</h1>
+    <div class="subtitle">Thanh Long ❤️‍🩹 code và sửa lại</div>
+    <div class="subtitle">⚠️ Ảnh đã chụp vào Thứ 5 15:47 22/10/2026 ⚠️</div>
+    <div id="gallery">
+
+        <!-- 1. KHỐI HIỂN THỊ HÌNH ÔNG/GIF 1 -->
+        <div class="image-block">
+            <img src="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/anhdon.png" alt="Ảnh đơn">
+            <a href="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/anhdon.png" download="anhdon.png" class="download-btn">📥 Tải xuống</a>
+        </div>
+
+        <!-- 2. KHỐI HIỂN THỊ HÌNH ÔNG/GIF 2 -->
+        <div class="image-block">
+            <img src="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/anhdoi.png" alt="Ảnh đôi">
+            <a href="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/anhdoi.png" download="anhdoi.png" class="download-btn">📥 Tải xuống</a>
+        </div>
+
+        <!-- 3. KHỐI HIỂN THỊ VIDEO 1 -->
+        <div class="image-block">
+            <video controls playsinline loop preload="metadata">
+                <source src="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/video.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+            <a href="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/video.mp4" download="video.mp4" class="download-btn">📥 Tải xuống video</a>
+        </div>
+
+        <!-- 4. KHỐI HIỂN THỊ VIDEO GIF -->
+        <div class="image-block">
+            <video controls playsinline loop preload="metadata">
+                <source src="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/gif.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+            <a href="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/gif.mp4" download="gif.mp4" class="download-btn">📥 Tải xuống GIF</a>
+        </div>
+
+        <!-- 5. CÁC ẢNH KHÁC -->
+        <div class="image-block">
+            <img src="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/1.png" alt="Ảnh 1">
+            <a href="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/1.png" download="1.png" class="download-btn">📥 Tải xuống</a>
+        </div>
+        <div class="image-block">
+            <img src="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/2.png" alt="Ảnh 2">
+            <a href="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/2.png" download="2.png" class="download-btn">📥 Tải xuống</a>
+        </div>
+        <div class="image-block">
+            <img src="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/3.png" alt="Ảnh 3">
+            <a href="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/3.png" download="3.png" class="download-btn">📥 Tải xuống</a>
+        </div>
+        <div class="image-block">
+            <img src="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/4.png" alt="Ảnh 4">
+            <a href="https://raw.githubusercontent.com/porccht/tlong/refs/heads/main/dulieu/4.png" download="4.png" class="download-btn">📥 Tải xuống</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
