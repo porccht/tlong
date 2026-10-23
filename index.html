@@ -6,8 +6,8 @@
     <title>PHOTOBOOTH - Thanh Long ❤️‍🩹</title>
     <style>
         /* ==========================================
-           1. CẤU HÌNH NỀN VÀ PHÔNG CHỮ TOÀN TRANG
-           ========================================== */
+            1. CẤU HÌNH NỀN VÀ PHÔNG CHỮ TOÀN TRANG
+            ========================================== */
         * {
             box-sizing: border-box;
         }
@@ -30,14 +30,13 @@
         }
 
         /* ==========================================
-           2. ANIMATION CHỮ & TIÊU ĐỀ
-           ========================================== */
+            2. ANIMATION CHỮ & TIÊU ĐỀ
+            ========================================== */
         h1 {
             margin-top: 10px;
             margin-bottom: 8px;
             font-size: 2.2rem;
             font-weight: 700;
-            /* Giữ chữ Thanh Long ❤️‍🩹 màu trắng sáng rõ mặc định */
             color: #ffffff;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             animation: fadeInDown 0.8s ease-out forwards;
@@ -67,8 +66,8 @@
         }
 
         /* ==========================================
-           3. KHUNG CHỨA (GALLERY) & LIQUID GLASS CARDS
-           ========================================== */
+            3. KHUNG CHỨA (GALLERY) & LIQUID GLASS CARDS
+            ========================================== */
         #gallery {
             display: flex;
             flex-direction: column;
@@ -107,10 +106,21 @@
         }
 
         /* ==========================================
-           4. ĐỊNH DẠNG HÌNH ẢNH & VIDEO
-           ========================================== */
-        img, video {
+            4. ĐỊNH DẠNG HÌNH ẢNH & VIDEO
+            ========================================== */
+        img {
             max-width: 100%;
+            max-height: 80vh;
+            border-radius: 16px;
+            border: 2px solid #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+            background-color: #1a1a1a;
+            object-fit: contain;
+        }
+
+        video {
+            width: 100%;
             max-height: 80vh;
             border-radius: 16px;
             border: 2px solid #ffffff;
@@ -126,8 +136,8 @@
         }
 
         /* ==========================================
-           5. NÚT ẤN MỚI BO TRÒN (LIQUID BUTTON)
-           ========================================== */
+            5. NÚT ẤN MỚI BO TRÒN (LIQUID BUTTON)
+            ========================================== */
         .download-btn {
             display: inline-flex;
             align-items: center;
@@ -158,39 +168,21 @@
         }
 
         /* ==========================================
-           6. ANIMATIONS KEYFRAMES
-           ========================================== */
+            6. ANIMATIONS KEYFRAMES
+            ========================================== */
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInCard {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -226,10 +218,10 @@
         <!-- 4. VIDEO GIF -->
         <div class="image-block">
             <video controls autoplay muted loop playsinline preload="auto">
-                <source src="https://cdn.jsdelivr.net/gh/porccht/tlong@main/dulieu/gif.mp4" type="video/mp4">
+                <source src="https://raw.githubusercontent.com/porccht/tlong/main/dulieu/gif.mp4" type="video/mp4">
                 Trình duyệt của bạn không hỗ trợ video.
             </video>
-            <a href="https://cdn.jsdelivr.net/gh/porccht/tlong@main/dulieu/gif.mp4" download="gif.mp4" class="download-btn">📥 Tải xuống GIF</a>
+            <a href="https://raw.githubusercontent.com/porccht/tlong/main/dulieu/gif.mp4" download="gif.mp4" class="download-btn">📥 Tải xuống GIF</a>
         </div>
 
         <!-- 5. CÁC ẢNH KHÁC -->
@@ -252,5 +244,34 @@
 
     </div>
 
+    <!-- SCRIPT GIÚP TẢI XUỐNG TRỰC TIẾP KHÔNG BỊ CHUYỂN TRANG -->
+    <script>
+        document.addEventListener('click', function(e) {
+            const btn = e.target.closest('.download-btn');
+            if (!btn) return;
+            
+            e.preventDefault();
+            const url = btn.getAttribute('href');
+            const filename = btn.getAttribute('download') || 'download';
+
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = blobUrl;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(blobUrl);
+                    document.body.removeChild(a);
+                })
+                .catch(() => {
+                    // Fallback nếu có lỗi mạng: mở trực tiếp link cũ
+                    window.open(url, '_blank');
+                });
+        });
+    </script>
 </body>
 </html>
