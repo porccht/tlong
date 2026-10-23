@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ THANH LONG (TLong ❤️‍🩹) ⚡
+# ⚡ THANH LONG ❤️‍🩹 | Thanh Huyền ❤️‍🩹 ⚡
 ### 🚀 System Administrator | Automation Engineer | Full-Stack & Tool Developer
 
 <p align="center">
